@@ -42,7 +42,8 @@ def markAttendance(name):
 encodeListKnown = findEncodings(images)
 print('Encoding Complete')
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture("./dev/video1")
+# cap = cv2.VideoCapture("/dev/video0")
 
 print("Test")
 
@@ -50,7 +51,7 @@ while True:
     success, img = cap.read()
     #img = captureScreen()
     if not success:
-        print("NOT done")
+        print("could not open cam")
     imgS = cv2.resize(img, (0, 0), None, 0.25, 0.25)
     imgS = cv2.cvtColor(imgS, cv2.COLOR_BGR2RGB)
 
